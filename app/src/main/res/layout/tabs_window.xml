@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#e6ddff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <SeekBar
+        android:id="@+id/sb_Progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:padding="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/white"
+            android:layout_weight="1"
+            android:background="#f4f4f4"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+        <View
+            android:layout_weight="1"
+            android:id="@+id/yello"
+            android:background="#fff000"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+        <View
+            android:layout_weight="1"
+            android:id="@+id/red"
+            android:background="#ff0011"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+        <View
+            android:layout_weight="1"
+            android:id="@+id/green"
+            android:background="#00ff0d"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+        <View
+            android:id="@+id/blue"
+            android:layout_weight="1"
+            android:background="#00e6ff"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+        <View
+            android:id="@+id/black"
+            android:layout_weight="1"
+            android:background="#060606"
+            android:layout_width="0dp"
+            android:layout_height="35dp"/>
+    </LinearLayout>
+
+</LinearLayout>

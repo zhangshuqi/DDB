@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--性别页面的dialog页面布局-->
+    <TextView
+        android:id="@+id/centleman_tv"
+        android:text="男士"
+        style="@style/dialog_style" />
+
+    <View
+        style="@style/view_short_line"/>
+
+    <TextView
+        android:id="@+id/lady_tv"
+        android:text="女士"
+        style="@style/dialog_style"  />
+
+</LinearLayout>

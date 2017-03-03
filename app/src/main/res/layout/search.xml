@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="15dp"
+            android:backgroundTint="@color/black"
+            android:background="@drawable/search_shape"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/search"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+
+            <EditText
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:hint="查找姓名或者客户号"
+                android:textColorHint="@color/gray"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+</LinearLayout>

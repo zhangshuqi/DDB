@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--联系类别的dialog页面-->
+
+    <RelativeLayout
+        android:id="@+id/kitchen_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/kitchen_tv"
+            android:text="厨房"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/view_short_line"/>
+    <RelativeLayout
+        android:id="@+id/toilett_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/toilett_tv"
+            android:text="卫生间"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:id="@+id/dining_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/dining_tv"
+            android:text="餐厅"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+    <RelativeLayout
+        android:id="@+id/livingroom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/livingroom_tv"
+            android:text="客厅"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:id="@+id/mainbedroom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/mainbedroom_tv"
+            android:text="主卧室"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+    <RelativeLayout
+        android:id="@+id/minbedroom_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/minbedroom_tv"
+            android:text="次卧室"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:id="@+id/child_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/child_tv"
+            android:text="儿童房"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:id="@+id/study_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/study_tv"
+            android:text="书房"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:id="@+id/balcony_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/balcony_tv"
+            android:text="阳台"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:id="@+id/hall_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/hall_tv"
+            android:text="门厅"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+    <RelativeLayout
+        android:id="@+id/onther_rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/onther_tv"
+            android:text="其他"
+            style="@style/measuresdialog_style" />
+
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/group"
+            style="@style/measuresdi_img_alog_style" />
+
+    </RelativeLayout>
+    <View
+        style="@style/view_short_line"/>
+
+</LinearLayout>

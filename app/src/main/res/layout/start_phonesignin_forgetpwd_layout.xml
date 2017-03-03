@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--忘记密码界面-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/forgwepwd_iv"
+            android:src="@drawable/goback"
+            android:padding="9dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+
+        <TextView
+            android:text="修改密码"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_line"/>
+
+    <EditText
+        android:id="@+id/forgetpwd_phone_et"
+        android:hint="手机号"
+        android:background="@null"
+        android:textCursorDrawable="@null"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/forgetpwd_code_et"
+            android:hint="验证码"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/forgetpwd_getcode_tv"
+            android:text="获取(60s)"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:paddingRight="20dp"
+            android:textColor="@color/blue"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/forgetpwd_imgcode_et"
+        android:hint="图形验证码"
+        android:background="@null"
+        android:textCursorDrawable="@null"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/forgetpwd_imgcode_iv"
+        android:src="@drawable/captcha"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="150dp"
+        android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/forgetpwd_repeatpwd_et"
+            android:hint="请重新输入密码"
+            android:password="true"
+            android:background="@null"
+            android:textCursorDrawable="@null"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/forgetpwd_showpwd_iv"
+            android:src="@drawable/conceal"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <Button
+        android:id="@+id/forgetpwd_resetpwd_bt"
+        android:text="重置密码"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:background="@drawable/rectanglelogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

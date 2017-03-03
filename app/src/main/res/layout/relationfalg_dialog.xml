@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_background"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--联系类别的dialog页面-->
+    <TextView
+        android:id="@+id/merchant_tv"
+        android:text="商家"
+        style="@style/dialog_style"  />
+
+    <View
+        style="@style/view_short_line"/>
+
+    <TextView
+        android:id="@+id/manufacturers_tv"
+        android:text="厂家"
+        style="@style/dialog_style" />
+    <View
+        style="@style/view_short_line"/>
+
+    <TextView
+        android:id="@+id/supervisor_tv"
+        android:text="监理"
+        style="@style/dialog_style"  />
+    <View
+        style="@style/view_short_line"/>
+
+    <TextView
+        android:id="@+id/owner_tv"
+        android:text="业主"
+        style="@style/dialog_style"  />
+
+</LinearLayout>

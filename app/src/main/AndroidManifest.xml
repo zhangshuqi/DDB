@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ljwj.ddb.taimian" >
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ddb"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+
+        <activity android:name=".activity.AddClientActivity"></activity>
+        <activity android:name=".activity.MyDataActivity"></activity>
+        <activity android:name=".activity.HomeActivity" android:windowSoftInputMode="adjustPan|stateHidden"></activity>
+        <activity android:name=".activity.StartPhoneLoginActivity"></activity>
+        <activity android:name=".activity.StartPhonesigninActivity"></activity>
+        <activity android:name=".activity.StartPhonesigninForgetPwdActivity"></activity>
+        <activity android:name=".activity.SuccessfulSinginActivity"></activity>
+        <activity android:name=".activity.PersonalDataActivity"></activity>
+        <activity android:name=".activity.PersonalDataTwoActivity"></activity>
+        <activity android:name=".activity.SkillsSettingsOneActivity"></activity>
+        <activity android:name=".activity.ClientDataActivity"></activity>
+        <activity android:name=".activity.OrderdetailActivity"></activity>
+        <activity android:name=".activity.GoMeasureActivity"></activity>
+        <activity android:name=".activity.NewRoomActivity"></activity>
+        <activity android:name=".activity.StartActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

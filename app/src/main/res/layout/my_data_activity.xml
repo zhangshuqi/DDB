@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/my_data_back_iv"
+            android:src="@drawable/goback"
+            android:padding="10dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+        <TextView
+            android:text="个人资料"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <TextView
+            android:text="个人头像"
+            android:id="@+id/client_name"
+            style="@style/clientle_name" />
+
+       <ImageView
+           android:src="@drawable/head_portrait"
+           android:layout_alignParentRight="true"
+           android:padding="5dp"
+           android:layout_marginRight="20dp"
+           android:layout_width="80dp"
+           android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="名字"
+            android:id="@+id/client_gender"
+            style="@style/clientle_name" />
+
+        <TextView
+            android:text="乐居万家"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="账号"
+            android:id="@+id/client_phone"
+            style="@style/clientle_name" />
+
+        <TextView
+            android:text="LJWJ888"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/gray_white"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <Button
+        android:id="@+id/my_data_return_bt"
+        android:text="退出账号"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_red_shape"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

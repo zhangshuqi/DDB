@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--发现页面-->
+    <TextView
+        android:paddingTop="10dp"
+        android:background="@drawable/gray"
+        android:text="台面之家"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="75dp" />
+
+    <View style="@style/view_line"/>
+
+    <RelativeLayout
+        android:id="@+id/main_table_tongxun_rl"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/find_iv"
+            android:src="@drawable/weixiao"
+            style="@style/main_table_imageview" />
+
+        <TextView
+            android:id="@+id/find_tv"
+            android:text="通讯沟通"
+            android:layout_toRightOf="@id/find_iv"
+            style="@style/main_table_textview1" />
+
+        <TextView
+            android:id="@+id/find_tv1"
+            android:text="实时沟通中心"
+            android:layout_toRightOf="@id/find_iv"
+            android:layout_below="@id/find_tv"
+            style="@style/main_table_textview2" />
+
+        <ImageView
+            android:src="@drawable/arrow_right_redirect"
+            style="@style/main_imageview2" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line" />
+    <RelativeLayout
+        android:id="@+id/main_table_zixun_rl"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/video_iv1"
+            android:src="@drawable/update"
+            style="@style/main_table_imageview" />
+
+        <TextView
+            android:id="@+id/video_tv11"
+            android:text="台面咨讯"
+            android:layout_toRightOf="@id/video_iv1"
+            style="@style/main_table_textview1"  />
+
+        <TextView
+            android:id="@+id/video_tv2"
+            android:text="了解行业动态，最新专业知识"
+            android:layout_toRightOf="@id/video_iv1"
+            android:layout_below="@id/video_tv11"
+            style="@style/main_table_textview2" />
+
+        <ImageView
+            android:src="@drawable/arrow_right_redirect"
+            style="@style/main_imageview2"/>
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line" />
+    <RelativeLayout
+        android:id="@+id/main_table_video_rl"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/video_iv3"
+            android:src="@drawable/help"
+            style="@style/main_table_imageview" />
+
+        <TextView
+            android:id="@+id/video_tv3"
+            android:text="视频教程"
+            android:layout_toRightOf="@id/video_iv3"
+            style="@style/main_table_textview1" />
+
+        <TextView
+            android:id="@+id/video_tv4"
+            android:text="实景操作视频，快速入门"
+            android:layout_toRightOf="@id/video_iv3"
+            android:layout_below="@id/video_tv3"
+            style="@style/main_table_textview2" />
+
+        <ImageView
+            android:src="@drawable/arrow_right_redirect"
+            style="@style/main_imageview2" />
+
+    </RelativeLayout>
+    <View style="@style/view_short_line" />
+</LinearLayout>

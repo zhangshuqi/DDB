@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:paddingTop="80dp"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:text="是否进一步完成资料，"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:text="尽快接单？"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+   <LinearLayout
+       android:padding="15dp"
+       android:gravity="center"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <Button
+           android:text="是"
+           android:id="@+id/successful_yes_bt"
+           android:textColor="@color/white"
+           android:layout_margin="15dp"
+           android:background="@drawable/yes_round"
+           android:layout_width="65dp"
+           android:layout_height="65dp" />
+
+       <Button
+           android:text="否"
+           android:id="@+id/successful_no_bt"
+           android:layout_margin="15dp"
+           android:background="@drawable/no_round"
+           android:layout_width="65dp"
+           android:layout_height="65dp" />
+
+   </LinearLayout>
+
+</LinearLayout>

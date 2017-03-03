@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/home_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/main_fm"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+    <View
+        style="@style/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <RadioGroup
+        android:id="@+id/home_rg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/home_mission"
+            android:drawableTop="@drawable/tab_selector_ruler"
+            android:text="我的任务"
+            android:checked="true"
+            style="@style/home_style" />
+        <RadioButton
+            android:id="@+id/home_clientele"
+            android:drawableTop="@drawable/tab_selector_kehuin"
+            android:text="客户列表"
+            style="@style/home_style"/>
+        <RadioButton
+            android:id="@+id/home_table"
+            android:drawableTop="@drawable/tab_selector_discoverin"
+            android:text="台面之家"
+            style="@style/home_style"/>
+        <RadioButton
+            android:id="@+id/hoeme_my"
+            android:drawableTop="@drawable/tab_selector_my"
+            android:text="我的主页"
+            style="@style/home_style"/>
+    </RadioGroup>
+
+</LinearLayout>

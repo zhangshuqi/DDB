@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@drawable/gray"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <ImageView
+            android:id="@+id/orderdetail_back_iv"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/brck"
+            android:padding="10dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
+        <TextView
+            android:layout_marginTop="25dp"
+            android:text="订单详情"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="27dp"
+            android:id="@+id/orderdetail_done_tv"
+            android:text="完成"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/my_iv"
+            android:src="@drawable/head"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/orderdetail_name_tv"
+            android:text="乐居万家"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:paddingTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/my_iv" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/my_tv1"
+            android:text="订单号：LJWJ888888"
+            android:textSize="15dp"
+            android:paddingTop="1dp"
+            android:layout_toRightOf="@id/my_iv"
+            android:layout_below="@id/orderdetail_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:text="待量尺"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/whites"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="订单详情"
+            style="@style/editextview_orderdetail" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="来源名称"
+            style="@style/editextview_orderdetail"/>
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="销售方"
+            style="@style/editextview_orderdetail" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="台面品牌"
+            style="@style/editextview_orderdetail" />
+
+    </RelativeLayout>
+    <View style="@style/view_short_line"/>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="台面材质"
+            style="@style/edittext_orderdetail" />
+
+        <EditText
+            android:hint="台面颜色"
+            style="@style/edittext_2_orderdetail" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="台面边型"
+            style="@style/edittext_orderdetail" />
+
+        <EditText
+            android:hint="前沿厚度"
+            style="@style/edittext_2_orderdetail"  />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="台面厚度"
+            style="@style/edittext_orderdetail" />
+
+        <EditText
+            android:hint="挡水高度"
+            style="@style/edittext_2_orderdetail"  />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="安装方式"
+            style="@style/editextview_orderdetail" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:hint="需求被注"
+            style="@style/editextview_orderdetail" />
+
+    </RelativeLayout>
+
+    <View style="@style/view_short_line"/>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--我的任务页面-->
+    <LinearLayout
+        android:background="@drawable/gray"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="85dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="35dp"/>
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            layout="@layout/search" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <RadioGroup
+            android:id="@+id/select_rg"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:text="临时客户"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:checked="true"
+                android:button="@null"
+                android:id="@+id/rb_temporary"
+                android:textColor="@drawable/tab_selector_tv_color"
+                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:text="测量阶段"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:button="@null"
+                android:id="@+id/rb_measure"
+                android:textColor="@drawable/tab_selector_tv_color"
+                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:text="生产阶段"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:button="@null"
+                android:id="@+id/rb_design"
+                android:textColor="@drawable/tab_selector_tv_color"
+                android:layout_weight="1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <View style="@style/view_line" />
+
+    <FrameLayout
+        android:id="@+id/addview_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+</LinearLayout>
