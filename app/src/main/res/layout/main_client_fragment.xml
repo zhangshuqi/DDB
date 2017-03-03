@@ -5,23 +5,27 @@
     android:layout_height="match_parent">
 
     <!--我的任务页面-->
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/rl_content"
         android:background="@drawable/gray"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="85dp">
 
         <View
+            android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="35dp"/>
 
-        <include
+        <com.ljwj.ddb.taimian.view.SearchView
+            android:layout_below="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            layout="@layout/search" />
-    </LinearLayout>
+            android:layout_height="55dp"></com.ljwj.ddb.taimian.view.SearchView>
+
+    </RelativeLayout>
 
     <LinearLayout
+        android:layout_below="@+id/rl_content"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="55dp">

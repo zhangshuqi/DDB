@@ -148,7 +148,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
                 //创建数据库操作类
                 insertDao = new SoonClientDataDao(this);
                 //创建最近客户数据库操作类
-                latelyDataDao=new LatelyClientDataDao(this);
+              //  latelyDataDao=new LatelyClientDataDao(this);
                 //将填写好的数据插入到数据库当中
                 long l = System.currentTimeMillis();//获取毫秒值作为ID
                 userid = String.valueOf(l);
@@ -161,7 +161,8 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
                 clientBean.setSite(siteString);//地址
                 clientBean.setDate(measuretimeString);//测量时间
                 clientBean.setState(0);//刚添加的客户状态都为0
-                //0代表的状态是临时客户
+                clientBean.setType(1);
+              //0代表的状态是临时客户
                 //临时客户数据库插入
                 insertDao.insert(clientBean.getUserid()
                         , clientBean.getName()
@@ -169,16 +170,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
                         , clientBean.getRelation()
                         , clientBean.getPhone()
                         , clientBean.getSite()
-                        , clientBean.getDate(),0);
-                //最近客户数据库插入
-                latelyDataDao.insert(clientBean.getUserid()
-                        , clientBean.getName()
-                        , clientBean.getSex()
-                        , clientBean.getRelation()
-                        , clientBean.getPhone()
-                        , clientBean.getSite()
-                        , clientBean.getDate(),0);
-
+                        , clientBean.getDate(),0,1);
                 //发送消息
                 EventBus.getDefault().post(new EventBusUtils(clientBean));
 

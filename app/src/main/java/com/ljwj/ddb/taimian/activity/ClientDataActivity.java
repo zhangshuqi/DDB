@@ -65,6 +65,8 @@ public class ClientDataActivity extends AppCompatActivity implements View.OnClic
     private ImageView client_data_break_iv;
     private TextView client_data_userid_tv;
     private RelativeLayout client_data_callup_rl;
+    private int type;
+    private int state;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,18 +90,19 @@ public class ClientDataActivity extends AppCompatActivity implements View.OnClic
 
        // state = intent.getIntExtra(Constant.STATE,0);//获取客户状态
         String sState = intent.getStringExtra(Constant.STATE);
-        int iState = Integer.parseInt(sState);
-        Log.i(TAG, "initdata: iState"+iState);
+        type = intent.getIntExtra(Constant.TYPE,0);
+        state = Integer.parseInt(sState);
+        Log.i(TAG, "initdata: iState"+ state);
 
         judgeSex(sex);
         judgeRelation(relation);
 
-        if(iState==0){
+        if(state ==0){
             //stateFlag等于0就是临时客户
             client_data_state_tv.setText("临时");
-        }else if(iState==1){
+        }else if(state ==1){
             client_data_state_tv.setText("测量");
-        }else if(iState==2){
+        }else if(state ==2){
             client_data_state_tv.setText("设计");
         }
         client_data_details_name_tv.setText(name);
@@ -178,20 +181,30 @@ public class ClientDataActivity extends AppCompatActivity implements View.OnClic
                 builder.setTitle("提示");
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        //临时客户数据库删除
-                        SoonClientDataDao cd=new SoonClientDataDao(ClientDataActivity.this);
-                        cd.delete(client_data_userid_tv.getText().toString());
+                       /* //临时客户数据库删除
+
                         //最近客户数据库删除
                         LatelyClientDataDao ld=new LatelyClientDataDao(ClientDataActivity.this);
                         ld.delete(client_data_userid_tv.getText().toString());
                         //删除测量客户数据库
                         OfficialClientDataDao officialD= new OfficialClientDataDao(ClientDataActivity.this);
-                        officialD.delete(client_data_userid_tv.getText().toString());
+                        officialD.delete(client_data_userid_tv.getText().toString());*/
+                        if (state==0){
+                            // 说明删除的临时用户
+                            SoonClientDataDao cd=new SoonClientDataDao(ClientDataActivity.this);
+                            cd.delete(userid);
+                        }else if(state==1){
+                            // 说明删除的测量用户
+                            OfficialClientDataDao officialD= new OfficialClientDataDao(ClientDataActivity.this);
+                            officialD.delete(userid);
+                        }else {
+                            // 说明删除的生产阶段的用户
+                        }
                         //房间类型数据库
                         NewRoomClientDataDao ncd=new NewRoomClientDataDao(ClientDataActivity.this);
                         ncd.delete(client_data_userid_tv.getText().toString());
                         //发送消息
-                        EventBus.getDefault().post(new EventBusUtilsUpdate("1"));
+                        EventBus.getDefault().post(new EventBusUtilsUpdate(type+""));
 
                         Toast.makeText(ClientDataActivity.this,"删除成功",Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
@@ -215,6 +228,7 @@ public class ClientDataActivity extends AppCompatActivity implements View.OnClic
                 finish();
                 break;
             case R.id.client_data_uploading_bt:
+                upLoading(100);
                 boolean isLogin = SPUtils.getLogin(this, Constant.LOGIN, false);
                 if(isLogin){
                     //登录状态下才可以上传客户资料
@@ -239,23 +253,6 @@ public class ClientDataActivity extends AppCompatActivity implements View.OnClic
                                     if(result==1){
                                         int userId = d.getCustomerid(); //长传成功返回客户id
                                         upLoading(userId);
-                                        //上传成功之后吧临时客户里面的数据删掉
-                                        SoonClientDataDao deleteDao=new SoonClientDataDao(ClientDataActivity.this);
-                                        deleteDao.delete(client_data_userid_tv.getText().toString());//删除客户
-
-                                        //修改最近客户数据的数据库
-                                        LatelyClientDataDao ubDataDao=new LatelyClientDataDao(ClientDataActivity.this);
-                                        String sNewUserId = String.valueOf(userId);
-                                        String sUserId = client_data_userid_tv.getText().toString();
-                                        //通过用户原来的ID修改客户类型及服务器返回来的ID
-                                        ContentValues values = new ContentValues();
-                                        values.put("state", 1);//正式客户
-                                        values.put("userid", sNewUserId); //数据库更新的正式客户ID
-                                        //数据更新
-                                        ubDataDao.updata(values,sUserId); //临时客户的ID
-                                        //发送消息
-                                        EventBus.getDefault().post(new EventBusUtilsUpdate("1"));
-                                        //上传成功之后就设置状态为true
                                         SPUtils.putIsCheck(ClientDataActivity.this,Constant.UPLOADINGFLAG,true);
                                         finish();
                                     }else {
@@ -281,29 +278,42 @@ public class ClientDataActivity extends AppCompatActivity implements View.OnClic
 
     //上传成功
     private void upLoading(int id) {
-        OfficialClientDataDao ocDataDao=new OfficialClientDataDao(this);
-        userid = String.valueOf(id);
-        ClientBean clientBean=new ClientBean();//创建一个bean类
 
-        clientBean.setUserid(userid);
-        clientBean.setName(name);
-        clientBean.setSex(sex);
-        clientBean.setRelation(relation);
-        clientBean.setPhone(phone);
-        clientBean.setSite(site);
-        clientBean.setDate(date);
-        clientBean.setState(1);//1代表正式客户
-        //测量用户数据库添加
-        ocDataDao.insert(clientBean.getUserid()
-                , clientBean.getName()
-                , clientBean.getSex()
-                , clientBean.getRelation()
-                , clientBean.getPhone()
-                , clientBean.getSite()
-                , clientBean.getDate(),1);
+        if (state==0){
+            //　等于１的时候就说明是　在临时用户上传资料的时候
+            SoonClientDataDao soonClientDataDao = new SoonClientDataDao(this);
+            soonClientDataDao.delete(userid);
+            OfficialClientDataDao ocDataDao=new OfficialClientDataDao(this);
+            userid = String.valueOf(id);
+            ClientBean clientBean=new ClientBean();//创建一个bean类
+            clientBean.setUserid(userid);
+            clientBean.setName(name);
+            clientBean.setSex(sex);
+            clientBean.setRelation(relation);
+            clientBean.setPhone(phone);
+            clientBean.setSite(site);
+            clientBean.setDate(date);
+            clientBean.setState(1);//1代表测量客户
+            clientBean.setType(2);
+            //测量用户数据库添加
+            ocDataDao.insert(clientBean.getUserid()
+                    , clientBean.getName()
+                    , clientBean.getSex()
+                    , clientBean.getRelation()
+                    , clientBean.getPhone()
+                    , clientBean.getSite()
+                    , clientBean.getDate(),1,2);
+            EventBus.getDefault().post(new EventBusOfficialUtils(clientBean));
+        }else if (state==1){
+            // 表示在测量用户阶段上传了数据
+             // 应该修改测量用户的状态为正式用户的状态3
+        }else if(state==2){
+            // 说明上传的生产阶段的用户了
+        }
 
-        Log.i(TAG, "upLoading: 上传成功");
-        //发送消息
-        EventBus.getDefault().post(new EventBusOfficialUtils(clientBean));
+       // 接受数据的时候 用来判断是删除哪个阶段的时候, 例如 如果是 type =1 情况下就是 临时用户变成了
+        // 测量用户  那么要回调到 临时用户的fragment之下刷新数据, 如果type=2　就是测量用户变成了生产阶段
+        // 那么 就要在测量用户的fragment之下刷新数据
+        EventBus.getDefault().post(new EventBusUtilsUpdate(state+""));
     }
 }

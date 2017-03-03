@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 public class OfficialClientDataDao {
-    private static final String CLIENT_DATA="OfficiaClientData.db";
+    private static final String CLIENT_DATA="ClientData.db";
     private static final int DB_VERSION=1;
     private final MyDataBaseHeiper myDataBaseHeiper;
     private SQLiteDatabase readableDatabase;
@@ -25,14 +25,14 @@ public class OfficialClientDataDao {
         myDataBaseHeiper = new MyDataBaseHeiper(context, CLIENT_DATA, null, DB_VERSION);
     }
 
-    //添加方法
-    public void insert(String userid, String name,String sex, String relation,String phone,String site,String time, Integer state){
+    //添加方法  type 2 表示为 测量用户
+    public void insert(String userid, String name,String sex, String relation,String phone,String site,String time, Integer state,Integer type){
         //得到可读的数据库对象
         readableDatabase = myDataBaseHeiper.getReadableDatabase();
         //插入
-        String insertSql="insert into ClientData (userid, name, sex, relation, phone, site, time,state) values(?,?,?,?,?,?,?,?)";
+        String insertSql="insert into ClientData (userid, name, sex, relation, phone, site, time,state,type) values(?,?,?,?,?,?,?,?,?)";
         //执行一条语句
-        readableDatabase.execSQL(insertSql, new Object[]{userid, name, sex, relation, phone, site, time,state});
+        readableDatabase.execSQL(insertSql, new Object[]{userid, name, sex, relation, phone, site, time,state,type});
         //关闭数据库
         readableDatabase.close();
     }
@@ -53,7 +53,7 @@ public class OfficialClientDataDao {
         //得到一个可写的数据库对象
         readableDatabase = myDataBaseHeiper.getWritableDatabase();
         //查询数据库所有数据
-        Cursor cursor = readableDatabase.query("ClientData", null,null, null, null, null, null, null);
+        Cursor cursor = readableDatabase.query("ClientData", null,"state=?", new String[]{"1"}, null, null, null, null);
         while (cursor.moveToNext()){
             ClientBean bean = new ClientBean();
             String userid = cursor.getString(cursor.getColumnIndex("userid"));
@@ -64,13 +64,17 @@ public class OfficialClientDataDao {
             String site = cursor.getString(cursor.getColumnIndex("site"));
             String time = cursor.getString(cursor.getColumnIndex("time"));
 
+            int type =cursor.getInt(cursor.getColumnIndex("type"));
+            int state = cursor.getInt(cursor.getColumnIndex("state"));
             bean.setUserid(userid);
+            bean.setState(state);
             bean.setName(name);
             bean.setPhone(phone);
             bean.setRelation(relation);
             bean.setSex(sex);
             bean.setSite(site);
             bean.setDate(time);
+            bean.setType(type);
             list.add(bean);
         }
         cursor.close();//关闭资源

@@ -1,17 +1,14 @@
 package com.ljwj.ddb.taimian.bean;
 
-import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+import android.support.annotation.NonNull;
 
 import com.ljwj.ddb.taimian.sqlite.MyDataBaseHeiper;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 临时客户列表数据库操作类
@@ -30,13 +27,13 @@ public class SoonClientDataDao {
     }
 
     //添加方法
-    public void insert(String userid, String name,String sex, String relation,String phone,String site,String time, Integer state){
+    public void insert(String userid, String name, String sex, String relation, String phone, String site, String time, Integer state, Integer type){
         //得到可读的数据库对象
         readableDatabase = myDataBaseHeiper.getReadableDatabase();
         //插入
-        String insertSql="insert into ClientData (userid, name, sex, relation, phone, site, time,state) values(?,?,?,?,?,?,?,?)";
+        String insertSql="insert into ClientData (userid, name, sex, relation, phone, site, time,state,type) values(?,?,?,?,?,?,?,?,?)";
         //执行一条语句
-        readableDatabase.execSQL(insertSql, new Object[]{userid, name, sex, relation, phone, site, time,state});
+        readableDatabase.execSQL(insertSql, new Object[]{userid, name, sex, relation, phone, site, time,state,type});
         //关闭数据库
         readableDatabase.close();
     }
@@ -52,12 +49,27 @@ public class SoonClientDataDao {
 
     //查询数据库全部数据
     public List< ClientBean> query(){
-        ArrayList< ClientBean> list=new ArrayList();
-
-        //得到一个可写的数据库对象
         readableDatabase = myDataBaseHeiper.getWritableDatabase();
-        //查询数据库所有数据
-        Cursor cursor = readableDatabase.query("ClientData", null,null, null, null, null, null, null);
+        Cursor cursor = readableDatabase.query("ClientData", null,"state=?", new String[]{"0"}, null, null, null, null);
+        List<ClientBean> clientBeen = queryClientData(cursor);
+        cursor.close();//关闭资源
+        readableDatabase.close();//关闭资源
+        return clientBeen;
+    }
+
+    public List<ClientBean> queryContent(String searchContent) {
+        readableDatabase = myDataBaseHeiper.getWritableDatabase();
+        Cursor cursor = readableDatabase.query("ClientData", null," name like?", new String[]{"%"+searchContent+"&"}, null, null, null, null);
+        List<ClientBean> clientBeen = queryClientData(cursor);
+        cursor.close();//关闭资源
+        readableDatabase.close();//关闭资源
+        return clientBeen;
+    }
+    @NonNull
+    private List<ClientBean> queryClientData(Cursor cursor) {
+        //得到一个可写的数据库对象
+
+        ArrayList< ClientBean> list=new ArrayList();
         while (cursor.moveToNext()){
             ClientBean bean = new ClientBean();
             String userid = cursor.getString(cursor.getColumnIndex("userid"));
@@ -67,18 +79,20 @@ public class SoonClientDataDao {
             String phone = cursor.getString(cursor.getColumnIndex("phone"));
             String site = cursor.getString(cursor.getColumnIndex("site"));
             String time = cursor.getString(cursor.getColumnIndex("time"));
-
+            int type =cursor.getInt(cursor.getColumnIndex("type"));
+            int state = cursor.getInt(cursor.getColumnIndex("state"));
             bean.setUserid(userid);
+            bean.setState(state);
             bean.setName(name);
             bean.setPhone(phone);
             bean.setRelation(relation);
             bean.setSex(sex);
             bean.setSite(site);
             bean.setDate(time);
+            bean.setType(type);
             list.add(bean);
         }
-        cursor.close();//关闭资源
-        readableDatabase.close();//关闭资源
+
         return list;
     }
 }

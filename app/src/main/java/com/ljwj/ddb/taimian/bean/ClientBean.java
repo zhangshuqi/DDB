@@ -14,9 +14,18 @@ public class ClientBean {
     String date;
     int state;
     String userid;
+    int type;
 
     public String getUserid() {
         return userid;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public void setUserid(String userid) {

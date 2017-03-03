@@ -20,6 +20,7 @@ public class MyDataBaseHeiper extends SQLiteOpenHelper {
             + "phone integer,"
             + "site varchar,"
             + "state integer,"
+            + "type integer,"
             + "time varchar)";
 
     public MyDataBaseHeiper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

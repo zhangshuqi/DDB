@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="wrap_content">
 
         <LinearLayout
@@ -21,13 +22,17 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp" />
 
-            <EditText
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/ed_text"
                 android:background="@null"
                 android:textCursorDrawable="@null"
-                android:hint="查找姓名或者客户号"
+                android:text="查找姓名或者客户号"
                 android:textColorHint="@color/gray"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
+
 
 </LinearLayout>

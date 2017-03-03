@@ -20,11 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:id="@+id/textView" />
-
-        <include
+        <com.ljwj.ddb.taimian.view.SearchView
+            android:id="@+id/search"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            layout="@layout/search" />
+            android:layout_height="55dp"></com.ljwj.ddb.taimian.view.SearchView>
     </LinearLayout>
 
     <RelativeLayout

@@ -111,6 +111,7 @@ public class Temporary_fms extends BaseFragments implements AdapterView.OnItemCl
     protected void initData() {
         //注册EventBus
         EventBus.getDefault().register(this);
+        clientDataDao = new SoonClientDataDao(getContext());
         //初始化获取数据更新UI
         queryData();
 
@@ -129,7 +130,7 @@ public class Temporary_fms extends BaseFragments implements AdapterView.OnItemCl
 
     private void queryData() {
         list=new ArrayList<>();
-        clientDataDao = new SoonClientDataDao(getContext());
+
         list.addAll( clientDataDao.query());//从数据库获取数据
         //设置适配器
         tem=new TemporaryAdapter(getContext(),list);
@@ -155,6 +156,7 @@ public class Temporary_fms extends BaseFragments implements AdapterView.OnItemCl
     @Subscribe
     public void onEventMainThread(EventBusUtilsUpdate event){
         //删除后回调更新UI
+        if (event.getUpdate().equals("0"))
         queryData();
     }
 
@@ -197,7 +199,7 @@ public class Temporary_fms extends BaseFragments implements AdapterView.OnItemCl
         mIntent.putExtra(Constant.SITE,clientBean.getSite() );
         mIntent.putExtra(Constant.SEX,clientBean.getSex() );
         mIntent.putExtra(Constant.RELATION,clientBean.getRelation() );
-
+        mIntent.putExtra(Constant.TYPE,clientBean.getType());
         String state = String.valueOf(clientBean.getState());
         mIntent.putExtra(Constant.STATE,state);
 

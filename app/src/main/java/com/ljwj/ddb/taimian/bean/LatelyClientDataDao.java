@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 public class LatelyClientDataDao {
-    private static final String CLIENT_DATA="LatelyClientData.db";
+    private static final String CLIENT_DATA="ClientData.db";
     private static final int DB_VERSION=1;
     private final MyDataBaseHeiper myDataBaseHeiper;
     private SQLiteDatabase mReadableDatabase;
@@ -73,8 +73,9 @@ public class LatelyClientDataDao {
             String phone = cursor.getString(cursor.getColumnIndex("phone"));
             String site = cursor.getString(cursor.getColumnIndex("site"));
             String time = cursor.getString(cursor.getColumnIndex("time"));
-
+            int state = cursor.getInt(cursor.getColumnIndex("state"));
             bean.setUserid(userid);
+            bean.setState(state);
             bean.setName(name);
             bean.setPhone(phone);
             bean.setRelation(relation);

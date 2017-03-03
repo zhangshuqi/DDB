@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.ljwj.ddb.taimian.R;
 import com.ljwj.ddb.taimian.bean.ClientBean;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 临时用户的适配器
@@ -18,13 +19,13 @@ import java.util.ArrayList;
  */
 
 public class TemporaryAdapter extends BaseAdapter {
-    private ArrayList<ClientBean> mList;
+    private List<ClientBean> mList;
     private final String TAG="TemporaryAdapter";
 
     private Context context;
     private ViewHolder viewholder;
 
-    public TemporaryAdapter(Context context, ArrayList<ClientBean> list) {
+    public TemporaryAdapter(Context context, List<ClientBean> list) {
         this.context=context;
         mList=list;
     }
@@ -90,15 +91,14 @@ public class TemporaryAdapter extends BaseAdapter {
         String sSex = clientBean.getSex();
         Log.i(TAG, "TemporaryAdapterinitData: 性别："+sSex);
 
-        int sState = clientBean.getState();
-        if(sState==0){
+        int state = clientBean.getState();
+        if(state==0){
             viewholder.sState.setText("临时客户");
-        }else if (sState==1){
+        }else if (state==1){
             viewholder.sState.setText("测量客户");
-        }else if (sState==2){
+        }else if (state==2){
             viewholder.sState.setText("设计阶段");
         }
-        Log.i(TAG, "TemporaryAdapterinitData: 状态："+sState);
     }
 
     private void initView(View view) {

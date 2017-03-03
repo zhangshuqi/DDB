@@ -53,6 +53,7 @@ public class Measure_fms extends BaseFragments {
                 String state = String.valueOf(clientBean.getState());
                 mIntent.putExtra(Constant.STATE,state);
                 mIntent.putExtra(Constant.USERID,clientBean.getUserid());
+                mIntent.putExtra(Constant.TYPE,clientBean.getType());
                 startActivity(mIntent);
             }
         });
@@ -103,6 +104,7 @@ public class Measure_fms extends BaseFragments {
     @Subscribe
     public void onEventMainThread(EventBusUtilsUpdate event){
         //删除后回调更新UI
+        if (event.getUpdate().equals("1"))
         queryData();
     }
 

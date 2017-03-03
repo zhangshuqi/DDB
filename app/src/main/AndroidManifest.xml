@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ddb"
@@ -32,6 +31,7 @@
         <activity android:name=".activity.OrderdetailActivity"></activity>
         <activity android:name=".activity.GoMeasureActivity"></activity>
         <activity android:name=".activity.NewRoomActivity"></activity>
+        <activity android:name=".activity.SearchActivity"></activity>
         <activity android:name=".activity.StartActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

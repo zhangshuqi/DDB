@@ -65,7 +65,7 @@ public class Main_Task_Fragment extends BaseFragments implements View.OnClickLis
                 String state = String.valueOf(clientBean.getState());
                 mIntent.putExtra(Constant.STATE,state);
                 mIntent.putExtra(Constant.USERID,clientBean.getUserid());
-
+                mIntent.putExtra(Constant.TYPE,clientBean.getType());
                 startActivity(mIntent);
             }
         });
