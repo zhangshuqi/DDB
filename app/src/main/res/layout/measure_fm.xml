@@ -6,11 +6,15 @@
 
     <!--测量阶段-->
 
-    <ListView
-        android:id="@+id/measure_lv"
+    <com.ljwj.ddb.taimian.view.MySwipeToRefresh
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/measure_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.ljwj.ddb.taimian.view.MySwipeToRefresh>
 
-    </ListView>
 
 </LinearLayout>

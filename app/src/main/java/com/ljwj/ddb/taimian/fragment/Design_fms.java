@@ -22,12 +22,10 @@ public class Design_fms extends BaseFragments {
 
     @Override
     protected void initData() {
-
     }
 
     @Override
     protected void initView(View view) {
-
     }
 
     @Override
