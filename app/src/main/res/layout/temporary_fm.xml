@@ -4,18 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <com.ljwj.ddb.taimian.view.MySwipeToRefresh
+        android:id="@+id/swipe_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/temporay_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.ljwj.ddb.taimian.view.MySwipeToRefresh>
+
+
     <!--临时客户阶段-->
-    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+    <!--<in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:visibility="gone"
     android:id="@+id/main_refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/temporay_lv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        &lt;!&ndash;<com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/temporay_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />&ndash;&gt;
 
-    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>-->
+
+
 
 </LinearLayout>

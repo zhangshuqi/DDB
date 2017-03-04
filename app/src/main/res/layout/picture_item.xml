@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="10dp">
 
-    <ImageView
-        android:background="@color/blue"
-        android:id="@+id/picture_iv"
-        android:scaleType="fitXY"
+    <TextView
+        android:id="@+id/tv_camera"
         android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="100dp"
+        android:visibility="gone" />
 
-</LinearLayout>
+    <ImageView
+
+        android:id="@+id/picture_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/blue"
+        android:scaleType="fitXY" />
+
+</RelativeLayout>

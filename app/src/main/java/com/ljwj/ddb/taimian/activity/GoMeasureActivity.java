@@ -152,10 +152,10 @@ public class GoMeasureActivity extends AppCompatActivity implements View.OnClick
                 nrb.setmUis(uid);
                 nrb.setmImage(null);
                 //插入数据库
-                mcd.insert(nrb.getmTitle(),nrb.getmUis(),nrb.getmImag());
+                mcd.insert(name,uid,"");
+                list.add(nrb);
+                newAdapter.notifyDataSetChanged();
                 Log.i(TAG, "queryData: 当前用户ID----插入数据"+uid);
-                queryData(uid);
-
                 mDialog.dismiss();
                 break;
         }

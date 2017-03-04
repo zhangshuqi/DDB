@@ -21,18 +21,25 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.ljwj.ddb.taimian.R;
 import com.ljwj.ddb.taimian.bean.ClientBean;
 import com.ljwj.ddb.taimian.bean.SoonClientDataDao;
 import com.ljwj.ddb.taimian.bean.LatelyClientDataDao;
+import com.ljwj.ddb.taimian.utils.DialogUtils;
 import com.ljwj.ddb.taimian.utils.EventBusUtils;
 import org.greenrobot.eventbus.EventBus;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 新建临时客户
  * Created by dell on 2017/1/7.
  */
-public class AddClientActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddClientActivity extends AppCompatActivity implements View.OnClickListener,OnDateSetListener {
 
     private ImageView switch_iv;
     private RelativeLayout switch_rl;
@@ -66,6 +73,7 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
     private String measuretimeString;
     private String userid;
     private LatelyClientDataDao latelyDataDao;
+    private TimePickerDialog timeDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -222,14 +230,18 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
                 mDialog.dismiss();
                 break;
             case R.id.clientle_addclient_measuretime_et:
-
+/*
                 new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         month+=1;
                         clientle_addclient_measuretime_et.setText(year+"-"+month+"-"+dayOfMonth);
                     }
-                },2017,01,01).show();
+                },2017,01,01).show();*/
+                if (timeDialog==null) {
+                    timeDialog = DialogUtils.createTimeDialog(this, this);
+                }
+                timeDialog.show(getSupportFragmentManager(), "all");
                 break;
 
             case R.id.clientle_addclient_goback_iv://返回
@@ -318,5 +330,18 @@ public class AddClientActivity extends AppCompatActivity implements View.OnClick
         values.clear();
 
         Toast.makeText(this, "添加联系人成功", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDateSet(TimePickerDialog timePickerView, long millseconds) {
+        String text = getDateToString(millseconds);
+        clientle_addclient_measuretime_et.setText(text);
+    }
+
+    public String getDateToString(long time) {
+        Date d = new Date(time);
+        SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date d1=new Date(time);
+        return format.format(d1);
     }
 }

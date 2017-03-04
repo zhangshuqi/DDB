@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <!--我的任务页面-->
+
     <LinearLayout
         android:background="@drawable/gray"
         android:orientation="vertical"
@@ -26,42 +27,46 @@
             android:layout_height="55dp"></com.ljwj.ddb.taimian.view.SearchView>
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/task_rl"
-        android:gravity="center_vertical"
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
 
-        <ImageView
-            android:id="@+id/iv1"
-            android:padding="7dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/baodian"
-            style="@style/imagview_style" />
+        <RelativeLayout
+            android:id="@+id/task_rl"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
 
-        <TextView
-            android:id="@+id/tv1"
-            android:text="使用宝典"
-            android:layout_toRightOf="@id/iv1"
-            style="@style/textview_my" />
+            <ImageView
+                android:id="@+id/iv1"
+                android:padding="7dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/baodian"
+                style="@style/imagview_style" />
 
-        <ImageView
-            android:src="@drawable/arrow_right_redirect"
-            style="@style/imagview_back" />
+            <TextView
+                android:id="@+id/tv1"
+                android:text="使用宝典"
+                android:layout_toRightOf="@id/iv1"
+                style="@style/textview_my" />
 
-    </RelativeLayout>
+            <ImageView
+                android:src="@drawable/arrow_right_redirect"
+                style="@style/imagview_back" />
 
-    <View
-        android:background="@color/gray"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        </RelativeLayout>
 
-    <ListView
-        android:id="@+id/maintask_lv"
+        <View
+            android:background="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    <com.ljwj.ddb.taimian.view.MySwipeToRefresh
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </ListView>
+        <com.baoyz.swipemenulistview.SwipeMenuListView
+            android:id="@+id/maintask_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.ljwj.ddb.taimian.view.MySwipeToRefresh>
 
 
 </LinearLayout>

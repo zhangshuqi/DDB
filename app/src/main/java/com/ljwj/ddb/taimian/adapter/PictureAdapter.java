@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.ljwj.ddb.taimian.R;
 import com.ljwj.ddb.taimian.bean.NewRoomBean;
 import com.ljwj.ddb.taimian.bean.PicturesBeean;
@@ -53,17 +55,26 @@ public class PictureAdapter extends BaseAdapter {
                 convertView = from.inflate(R.layout.picture_item, null);
                 viewHolder = new ViewHolder();
                 viewHolder.image = (ImageView) convertView.findViewById(R.id.picture_iv);
+                viewHolder.tvCamera= (TextView) convertView.findViewById(R.id.tv_camera);
                 convertView.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
-            PicturesBeean picturesB = mPicturesList.get(position);
-            viewHolder.image.setImageDrawable(picturesB.getmImag());
+            if (position==0){
+                viewHolder.tvCamera.setVisibility(View.VISIBLE);
+                viewHolder.image.setVisibility(View.GONE);
+            }else {
+                viewHolder.tvCamera.setVisibility(View.GONE);
+                viewHolder.image.setVisibility(View.VISIBLE);
+                PicturesBeean picturesB = mPicturesList.get(position);
+                viewHolder.image.setImageDrawable(picturesB.getmImag());
+            }
             return convertView;
         }
 
     class ViewHolder
     {
         public ImageView image;
+        public TextView tvCamera;
     }
 }

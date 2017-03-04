@@ -5,7 +5,114 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.ljwj.ddb.taimian.view.SweepView
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="7dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/temporary_head_iv"
+            android:src="@drawable/head"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+        <TextView
+            android:id="@+id/temporary_name_tv"
+            android:text="姓名"
+            android:textSize="16dp"
+            android:layout_toRightOf="@id/temporary_head_iv"
+            android:textStyle="bold"
+            android:paddingTop="9dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/temporary_sex_tv"
+            android:text="性别"
+            android:textSize="10dp"
+            android:layout_toRightOf="@id/temporary_name_tv"
+            android:paddingTop="15dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/temporary_state_tv"
+            android:text="未建立房间"
+            android:textSize="10dp"
+            android:layout_toRightOf="@id/temporary_head_iv"
+            android:layout_below="@id/temporary_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/temporary_phone_tv"
+            android:text="电话"
+            android:textSize="10dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/temporary_state_tv"
+            android:layout_below="@id/temporary_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/temporary_relation_tv"
+            android:text="类别"
+            android:textSize="10dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/temporary_phone_tv"
+            android:layout_below="@id/temporary_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/temporary_site_tv"
+            android:text="地址"
+            android:textSize="10dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/temporary_relation_tv"
+            android:layout_below="@id/temporary_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/temporary_userid_tv"
+            android:text="用户ID"
+            android:textSize="10dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/temporary_site_tv"
+            android:layout_below="@id/temporary_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="11-23"
+            android:paddingTop="9dp"
+            android:id="@+id/temporary_date_tv"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/temporary_iv"
+            android:padding="7dp"
+            android:layout_marginLeft="180dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_right_redirect"
+            android:layout_width="40dp"
+            android:layout_height="50dp" />
+
+
+    </RelativeLayout>
+
+    <!--<com.ljwj.ddb.taimian.view.SweepView
         android:id="@+id/sweepview_sv"
         android:layout_width="match_parent"
         android:layout_height="50dp" >
@@ -122,5 +229,5 @@
             android:gravity="center"
             android:background="#ff0000"
             android:text="删除" />
-    </com.ljwj.ddb.taimian.view.SweepView>
+    </com.ljwj.ddb.taimian.view.SweepView>-->
 </LinearLayout>
